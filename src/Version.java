@@ -27,7 +27,7 @@ public class Version extends JPanel {
 	public Version() {
 		versionframe = new JFrame("通讯录系统版本信息");
 		versionframe.setContentPane(this);
-		versionframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//versionframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		versionframe.setSize(WIDTH, HEIGHT);
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		Dimension screenSize = toolkit.getScreenSize();

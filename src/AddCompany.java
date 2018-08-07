@@ -51,9 +51,7 @@ public class AddCompany extends JPanel{
 		int height = screenSize.height;
 		int x = (width - WIDTH) / 2;
 		int y = (height - HEIGHT) /2;
-		frame.setLocation(x, y);
-		frame.setVisible(true);
-		frame.setSize(new Dimension(WIDTH, HEIGHT));
+		
 		GridBagLayout lay = new GridBagLayout();
 		setLayout(lay);
 		JLabel name = new JLabel("ÐÕÃû");
@@ -106,7 +104,9 @@ public class AddCompany extends JPanel{
 		add(telinput,constraints,1,5,1,1);
 		add(motelinput,constraints,3,5,1,1);
 		add(addbutton,constraints,0,6,2,1);
-		
+		frame.setLocation(x, y);
+		frame.setVisible(true);
+		frame.setSize(new Dimension(WIDTH, HEIGHT));
 		addbutton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -155,5 +155,9 @@ public class AddCompany extends JPanel{
 				frame.dispose();
 			}
 		});
+	}
+	
+	public static void main(String[] args) {
+		new AddCompany();
 	}
 }

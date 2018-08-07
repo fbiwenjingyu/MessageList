@@ -68,7 +68,11 @@ public class ClassInfo extends JPanel{
 		add(name,constraints,0,1,1,1);
 		add(sex,constraints,0,2,1,1);
 		add(address,constraints,0,3,1,1);
-		add(homeaddress,constraints,1,4,1,1);
+		add(homeaddress,constraints,0,4,1,1);
+		add(nameinput,constraints,1,1,1,1);
+		add(sexinput,constraints,1,2,1,1);
+		add(addressinput,constraints,1,3,1,1);
+		add(homeaddressinput,constraints,1,4,1,1);
 		add(city,constraints,2,1,1,1);
 		add(company,constraints,2,2,1,1);
 		add(duty,constraints,2,3,1,1);

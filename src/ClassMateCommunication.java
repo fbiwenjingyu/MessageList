@@ -49,11 +49,11 @@ public class ClassMateCommunication {
 		homephonetext =  new JTextField(20);
 		moteltext = new JTextField(20);
 		closeButton = new JButton("¹Ø±Õ´Ë´°¿Ú");
-		add(title,constraints,1,0,3,1);
-		add(homephonetext,constraints,1,1,3,1);
-		add(title1,constraints,1,2,3,1);
-		add(moteltext,constraints,1,3,3,1);
-		add(closeButton,constraints,2,4,3,1);
+		add(title,constraints,1,1,3,1);
+		add(homephonetext,constraints,1,2,3,1);
+		add(title1,constraints,1,3,3,1);
+		add(moteltext,constraints,1,4,3,1);
+		add(closeButton,constraints,2,5,3,1);
 		add(name,constraints,1,0,1,1);
 		add(nameinput,constraints,2,0,1,1);
 		

@@ -43,9 +43,7 @@ public class AddClassMate extends JPanel{
 		int height = screenSize.height;
 		int x = (width - WIDTH) / 2;
 		int y = (height - HEIGHT) /2;
-		frame.setLocation(x, y);
-		frame.setVisible(true);
-		frame.setSize(new Dimension(WIDTH, HEIGHT));
+		
 		GridBagLayout lay = new GridBagLayout();
 		setLayout(lay);
 		JLabel name = new JLabel("ÐÕÃû");
@@ -95,9 +93,11 @@ public class AddClassMate extends JPanel{
 		add(contact,constraints,0,5,1,1);
 		add(homephone,constraints,2,5,1,1);
 		add(contactinput,constraints,1,5,1,1);
-		add(homephoneinput,constraints,3,5,1,1);
+		add(homeaddressinput,constraints,3,5,1,1);
 		add(addbutton,constraints,0,6,2,1);
-		
+		frame.setLocation(x, y);
+		frame.setVisible(true);
+		frame.setSize(new Dimension(WIDTH, HEIGHT));
 		addbutton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -146,5 +146,9 @@ public class AddClassMate extends JPanel{
 				frame.dispose();
 			}
 		});
+	}
+	
+	public static void main(String[] args) {
+		new AddClassMate();
 	}
 }

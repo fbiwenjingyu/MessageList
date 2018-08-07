@@ -2,12 +2,15 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JToolBar;
@@ -41,33 +44,33 @@ public class MainFrame {
 	JButton updatebutton3;
 	
 	public MainFrame() {
-		f = new JFrame("æˆ‘çš„é€šè®¯å½•ç³»ç»Ÿä¸»ç•Œé¢");
+		f = new JFrame("ÎÒµÄÍ¨Ñ¶Â¼ÏµÍ³Ö÷½çÃæ");
 		JMenuBar menuBar1 = new JMenuBar();
 		p = new JPanel();
 		f.setContentPane(p);
 		f.setJMenuBar(menuBar1);
-		JMenu menu1 = new JMenu("åŒå­¦é€šè®¯ç³»ç»Ÿ");
-		JMenu menu2 = new JMenu("åŒäº‹é€šè®¯ç³»ç»Ÿ");
-		JMenu menu3 = new JMenu("æœ‹å‹é€šè®¯ç³»ç»Ÿ");
-		JMenu menu4 = new JMenu("æŸ¥è¯¢ç³»ç»Ÿ");
-		JMenu menu5 = new JMenu("å¸®åŠ©ç³»ç»Ÿ");
+		JMenu menu1 = new JMenu("Í¬Ñ§Í¨Ñ¶ÏµÍ³");
+		JMenu menu2 = new JMenu("Í¬ÊÂÍ¨Ñ¶ÏµÍ³");
+		JMenu menu3 = new JMenu("ÅóÓÑÍ¨Ñ¶ÏµÍ³");
+		JMenu menu4 = new JMenu("²éÑ¯ÏµÍ³");
+		JMenu menu5 = new JMenu("°ïÖúÏµÍ³");
 		menuBar1.add(menu1);
 		menuBar1.add(menu2);
 		menuBar1.add(menu3);
 		menuBar1.add(menu4);
 		menuBar1.add(menu5);
-		item1 = new JMenuItem("åŒå­¦åŸºæœ¬ä¿¡æ¯ç³»ç»Ÿ");
-		item2 = new JMenuItem("åŒå­¦è”ç³»æ–¹å¼ç³»ç»Ÿ");
-		JMenuItem item3 = new JMenuItem("é€€å‡ºé€šè®¯å½•ç³»ç»Ÿ");
-		JMenuItem item4 = new JMenuItem("åŒäº‹åŸºæœ¬ä¿¡æ¯ç³»ç»Ÿ");
-		JMenuItem item5 = new JMenuItem("åŒäº‹è”ç³»æ–¹å¼ç³»ç»Ÿ");
-		JMenuItem item6 = new JMenuItem("æœ‹å‹åŸºæœ¬ä¿¡æ¯ç³»ç»Ÿ");
-		JMenuItem item7 = new JMenuItem("æœ‹å‹è”ç³»æ–¹å¼ç³»ç»Ÿ");
-		JMenuItem item8 = new JMenuItem("åŒå­¦æŸ¥è¯¢ç³»ç»Ÿ");
-		JMenuItem item9 = new JMenuItem("åŒäº‹æŸ¥è¯¢ç³»ç»Ÿ");
-		JMenuItem item10 = new JMenuItem("æœ‹å‹æŸ¥è¯¢ç³»ç»Ÿ");
-		JMenuItem item11 = new JMenuItem("ç‰ˆæœ¬ä¿¡æ¯");
-		JMenuItem item12 = new JMenuItem("å¸®åŠ©ä¿¡æ¯");
+		item1 = new JMenuItem("Í¬Ñ§»ù±¾ĞÅÏ¢ÏµÍ³");
+		item2 = new JMenuItem("Í¬Ñ§ÁªÏµ·½Ê½ÏµÍ³");
+		JMenuItem item3 = new JMenuItem("ÍË³öÍ¨Ñ¶Â¼ÏµÍ³");
+		JMenuItem item4 = new JMenuItem("Í¬ÊÂ»ù±¾ĞÅÏ¢ÏµÍ³");
+		JMenuItem item5 = new JMenuItem("Í¬ÊÂÁªÏµ·½Ê½ÏµÍ³");
+		JMenuItem item6 = new JMenuItem("ÅóÓÑ»ù±¾ĞÅÏ¢ÏµÍ³");
+		JMenuItem item7 = new JMenuItem("ÅóÓÑÁªÏµ·½Ê½ÏµÍ³");
+		JMenuItem item8 = new JMenuItem("Í¬Ñ§²éÑ¯ÏµÍ³");
+		JMenuItem item9 = new JMenuItem("Í¬ÊÂ²éÑ¯ÏµÍ³");
+		JMenuItem item10 = new JMenuItem("ÅóÓÑ²éÑ¯ÏµÍ³");
+		JMenuItem item11 = new JMenuItem("°æ±¾ĞÅÏ¢");
+		JMenuItem item12 = new JMenuItem("°ïÖúĞÅÏ¢");
 		menu1.add(item1);
 		menu1.addSeparator();
 		menu1.add(item2);
@@ -87,21 +90,21 @@ public class MainFrame {
 		menu5.add(item11);
 		menu5.addSeparator();
 		menu5.add(item12);
-		JButton button1 = new JButton("åŒå­¦æŸ¥è¯¢ç³»ç»Ÿ");
-		JButton button2 = new JButton("åŒäº‹æŸ¥è¯¢ç³»ç»Ÿ");
-		JButton button3 = new JButton("æœ‹å‹æŸ¥è¯¢ç³»ç»Ÿ");
-		closebutton1 = new JButton("å…³é—­");
-		closebutton2 = new JButton("å…³é—­");
-		closebutton3 = new JButton("å…³é—­");
-		addbutton1 = new JButton("æ·»åŠ åŒå­¦ä¿¡æ¯æ•°æ®");
-		addbutton2 = new JButton("æ·»åŠ åŒäº‹ä¿¡æ¯æ•°æ®");
-		addbutton3 = new JButton("æ·»åŠ æœ‹å‹ä¿¡æ¯æ•°æ®");
-		delbutton1 = new JButton("åˆ é™¤åŒå­¦ä¿¡æ¯æ•°æ®");
-		delbutton2 = new JButton("åˆ é™¤åŒäº‹ä¿¡æ¯æ•°æ®");
-		delbutton3 = new JButton("åˆ é™¤æœ‹å‹ä¿¡æ¯æ•°æ®");
-		updatebutton1 = new JButton("æ›´æ–°åŒå­¦ä¿¡æ¯æ•°æ®");
-		updatebutton2 = new JButton("æ›´æ–°åŒäº‹ä¿¡æ¯æ•°æ®");
-		updatebutton3 = new JButton("æ›´æ–°æœ‹å‹ä¿¡æ¯æ•°æ®");
+		JButton button1 = new JButton("Í¬Ñ§²éÑ¯ÏµÍ³");
+		JButton button2 = new JButton("Í¬ÊÂ²éÑ¯ÏµÍ³");
+		JButton button3 = new JButton("ÅóÓÑ²éÑ¯ÏµÍ³");
+		closebutton1 = new JButton("¹Ø±Õ");
+		closebutton2 = new JButton("¹Ø±Õ");
+		closebutton3 = new JButton("¹Ø±Õ");
+		addbutton1 = new JButton("Ìí¼ÓÍ¬Ñ§ĞÅÏ¢Êı¾İ");
+		addbutton2 = new JButton("Ìí¼ÓÍ¬ÊÂĞÅÏ¢Êı¾İ");
+		addbutton3 = new JButton("Ìí¼ÓÅóÓÑĞÅÏ¢Êı¾İ");
+		delbutton1 = new JButton("É¾³ıÍ¬Ñ§ĞÅÏ¢Êı¾İ");
+		delbutton2 = new JButton("É¾³ıÍ¬ÊÂĞÅÏ¢Êı¾İ");
+		delbutton3 = new JButton("É¾³ıÅóÓÑĞÅÏ¢Êı¾İ");
+		updatebutton1 = new JButton("¸üĞÂÍ¬Ñ§ĞÅÏ¢Êı¾İ");
+		updatebutton2 = new JButton("¸üĞÂÍ¬ÊÂĞÅÏ¢Êı¾İ");
+		updatebutton3 = new JButton("¸üĞÂÅóÓÑĞÅÏ¢Êı¾İ");
 		p1 = new JPanel();
 		p2 = new JPanel();
 		p3 = new JPanel();
@@ -125,6 +128,7 @@ public class MainFrame {
 		p.setLayout(new BorderLayout());
 		p.add("North",bar);
 		f.setVisible(true);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setSize(WIDTH, HEIGHT);
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		Dimension screenSize = toolkit.getScreenSize();
@@ -133,8 +137,255 @@ public class MainFrame {
 		int x = (width - WIDTH) / 2;
 		int y = (height - HEIGHT) /2;
 		f.setLocation(x, y);
+		item1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				tab1 = new Tabpane();
+				p.add("Center",tab1);
+				tab1.panel1.add(new ClassInfo());
+				p.add("South",p1);
+				Tabpane.tp.setVisible(true);
+				p1.setVisible(true);
+			}
+		});
 		
+		item2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ClassMateCommunication cc = new ClassMateCommunication();
+				p.add("Center",cc.pane);
+				cc.pane.setVisible(true);
+			}
+		});
 		
+		item3.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int i = JOptionPane.showConfirmDialog(null,"ÊÇ·ñÕæµÄÒªÍË³öÏµÍ³", "ÍË³öÈ·ÈÏ¶Ô»°¿ò ",JOptionPane.YES_NO_CANCEL_OPTION);
+				if(i == 0) {
+					f.dispose();
+				}
+			}
+		});
+		
+		item4.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				tab2 = new Tabpane();
+				p.add("Center",tab2);
+				tab2.panel1.add(new CompanyInfo());
+				p.add("South",p2);
+				Tabpane.tp.setVisible(true);
+				p2.setVisible(true);
+			}
+		});
+		
+		item5.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				CompanyCommunication ccl = new CompanyCommunication();
+				p.add("Center",ccl.pane);
+				ccl.pane.setVisible(true);
+			}
+		});
+		
+		item6.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				tab3 = new Tabpane();
+				p.add("Center",tab3);
+				tab3.panel1.add(new FriendInfo());
+				p.add("South",p3);
+				Tabpane.tp.setVisible(true);
+				p3.setVisible(true);
+			}
+		});
+		
+		item7.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				FriendCommunication fc = new FriendCommunication();
+				p.add("Center",fc.pane);
+				fc.pane.setVisible(true);
+			}
+		});
+		
+		item8.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ClassMateFind cf = new ClassMateFind();
+				p.add("Center",cf.pane);
+				cf.pane.setVisible(true);
+			}
+		});
+		
+		item9.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				CompanyFind cf = new CompanyFind();
+				p.add("Center",cf.pane);
+				cf.pane.setVisible(true);
+			}
+		});
+		
+		item10.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				FriendFind ff = new FriendFind();
+				p.add("Center",ff.pane);
+				ff.pane.setVisible(true);
+			}
+		});
+		
+		item11.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Version();
+			}
+		});
+		
+		item12.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Help();
+			}
+		});
+		
+		button1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ClassMateFind cf = new ClassMateFind();
+				p.add("Center",cf.pane);
+				cf.pane.setVisible(true);
+			}
+		});
+		
+		button2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				CompanyFind cf = new CompanyFind();
+				p.add("Center",cf.pane);
+				cf.pane.setVisible(true);
+			}
+		});
+		
+		button3.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				FriendFind ff = new FriendFind();
+				p.add("Center",ff.pane);
+				ff.pane.setVisible(true);
+			}
+		});
+		
+		closebutton1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				tab1.setVisible(false);
+				p1.setVisible(false);
+			}
+		});
+		
+		closebutton2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				tab2.setVisible(false);
+				p2.setVisible(false);
+			}
+		});
+		
+		closebutton3.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				tab3.setVisible(false);
+				p3.setVisible(false);
+			}
+		});
+		
+		addbutton1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new AddClassMate();
+			}
+		});
+		
+		addbutton2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new AddCompany();
+			}
+		});
+		
+		addbutton3.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new AddFriend();
+			}
+		});
+		
+		delbutton1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int i = JOptionPane.showConfirmDialog(null,"ÊÇ·ñÕæµÄÉ¾³ı´ËÏî", "É¾³ıÈ·ÈÏ¶Ô»°¿ò ",JOptionPane.YES_NO_CANCEL_OPTION);
+				if(i == 0) {
+					new DeleteClassMate();
+				}
+			}
+		});
+		
+		delbutton2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int i = JOptionPane.showConfirmDialog(null,"ÊÇ·ñÕæµÄÉ¾³ı´ËÏî", "É¾³ıÈ·ÈÏ¶Ô»°¿ò ",JOptionPane.YES_NO_CANCEL_OPTION);
+				if(i == 0) {
+					new DeleteCompany();
+				}
+			}
+		});
+		
+		delbutton3.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int i = JOptionPane.showConfirmDialog(null,"ÊÇ·ñÕæµÄÉ¾³ı´ËÏî", "É¾³ıÈ·ÈÏ¶Ô»°¿ò ",JOptionPane.YES_NO_CANCEL_OPTION);
+				if(i == 0) {
+					new DeleteFriend();
+				}
+			}
+		});
+		
+		updatebutton1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int i = JOptionPane.showConfirmDialog(null,"ÊÇ·ñÕæµÄ¸üĞÂ´ËÏî", "È·ÈÏ¸üĞÂ¶Ô»°¿ò ",JOptionPane.YES_NO_CANCEL_OPTION);
+				if(i == 0) {
+					new UpdateClassMate();
+				}
+			}
+		});
+		
+		updatebutton2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int i = JOptionPane.showConfirmDialog(null,"ÊÇ·ñÕæµÄ¸üĞÂ´ËÏî", "È·ÈÏ¸üĞÂ¶Ô»°¿ò ",JOptionPane.YES_NO_CANCEL_OPTION);
+				if(i == 0) {
+					new UpdateCompany();
+				}
+			}
+		});
+		
+		updatebutton3.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int i = JOptionPane.showConfirmDialog(null,"ÊÇ·ñÕæµÄ¸üĞÂ´ËÏî", "È·ÈÏ¸üĞÂ¶Ô»°¿ò ",JOptionPane.YES_NO_CANCEL_OPTION);
+				if(i == 0) {
+					new UpdateFriend();
+				}
+			}
+		});
+	}
+	
+	public static void main(String[] args) {
+		new MainFrame();
 	}
 	
 }
